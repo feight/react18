@@ -1,7 +1,7 @@
 
 import React from "react";
 import { renderToPipeableStream } from 'react-dom/server';
-import App from "../src/App";
+import App from "../App";
 
 export const render = (url, res) => {
     res.socket.on("error", (error) => {
@@ -11,6 +11,7 @@ export const render = (url, res) => {
     const { pipe, abort } = renderToPipeableStream(
         <App />,
       {
+        bootstrapScripts: ["/static/index.js"],
         onCompleteShell() {
           // If something errored before we started streaming, we set the error code appropriately.
           res.statusCode = didError ? 500 : 200;

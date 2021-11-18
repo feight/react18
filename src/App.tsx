@@ -7,14 +7,24 @@
  */
 
  import {lazy, Suspense} from 'react';
+ import { Html } from "./html";
  // This happens at runtime -- a lazy component returns a async component
- const Articles = lazy(() => import('./components/Articles'));
+ const Articles = lazy(async () => {
+
+    await new Promise((resolve) => setTimeout(resolve, 5000));
+
+    return import('./components/Articles')
+
+ });
 
  export default function App({assets}: any) {
 
    return (
-    <Suspense fallback={<div>Loading...</div>}>
-        <Articles />
-    </Suspense>
+       <Html>
+           {"AWESOME "}
+            <Suspense fallback={<div>Loading...</div>}>
+                <Articles />
+            </Suspense>
+       </Html>
    );
  }

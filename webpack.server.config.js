@@ -4,9 +4,9 @@ const webpack = require('webpack');
 module.exports = {
     mode: 'development',
     target: "node",
-    entry: [path.resolve(__dirname, './server/server.js')],
+    entry: [path.resolve(__dirname, './src/server/index.js')],
     output: {
-      path: path.resolve(__dirname, './build'),
+      path: path.resolve(__dirname, './build/server'),
       filename: 'index.js',
     },
     resolve: {

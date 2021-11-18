@@ -20,6 +20,8 @@ function handleErrors(fn) {
     };
   }
 
+app.use('/static', express.static('build/client'))
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
