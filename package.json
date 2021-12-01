@@ -14,10 +14,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/react-router-dom": "^5.3.2",
     "cross-fetch": "^3.1.4",
     "express": "^4.17.1",
     "react": "^18.0.0-beta-f320ef88f-20211116",
     "react-dom": "^18.0.0-beta-f320ef88f-20211116",
+    "react-router": "^6.0.2",
     "webpack": "^5.64.1"
   },
   "devDependencies": {

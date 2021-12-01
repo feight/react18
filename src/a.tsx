@@ -11,7 +11,7 @@
  // This happens at runtime -- a lazy component returns a async component
  const Articles = lazy(async () => import('./components/Articles'));
 
- export default function App({assets}: any) {
+ export default function A({assets}: any) {
 
    return (
        <Html>
