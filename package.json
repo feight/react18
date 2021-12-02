@@ -20,6 +20,7 @@
     "react": "^18.0.0-beta-f320ef88f-20211116",
     "react-dom": "^18.0.0-beta-f320ef88f-20211116",
     "react-router": "^6.0.2",
+    "react-router-dom": "^6.0.2",
     "webpack": "^5.64.1"
   },
   "devDependencies": {

@@ -7,7 +7,16 @@ const port = 4000;
 
 app.get('/', handleErrors(async function(req, res) {
     render(req.url, res);
-  }))
+}));
+
+app.get('/a', handleErrors(async function(req, res) {
+    render(req.url, res);
+}));
+
+app.get('/b', handleErrors(async function(req, res) {
+    render(req.url, res);
+}));
+
 
 
 function handleErrors(fn) {

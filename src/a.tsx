@@ -12,12 +12,10 @@
  const Articles = lazy(async () => import('./components/Articles'));
 
  export default function A({assets}: any) {
-
+    console.log("A");
    return (
-       <Html>
-            <Suspense fallback={<div>Loading...</div>}>
-                <Articles />
-            </Suspense>
-       </Html>
+    <Suspense fallback={<div>Loading...</div>}>
+        <Articles />
+    </Suspense>
    );
  }

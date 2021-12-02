@@ -6,18 +6,17 @@
  *
  */
 
- import {lazy, Suspense} from 'react';
+import { NavBar } from './components/nav';
+import { AppRoutes } from './components/routes';
  import { Html } from "./html";
- // This happens at runtime -- a lazy component returns a async component
- const Articles = lazy(async () => import('./components/Articles'));
+
 
  export default function App({assets}: any) {
 
    return (
-       <Html>
-            <Suspense fallback={<div>Loading...</div>}>
-                <Articles />
-            </Suspense>
-       </Html>
+        <>
+            <NavBar />
+           <AppRoutes />
+        </>
    );
  }

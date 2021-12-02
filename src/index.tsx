@@ -6,7 +6,20 @@
  *
  */
 
- import {hydrateRoot} from 'react-dom';
- import App from './App';
+ import { hydrateRoot } from "react-dom";
+ import { BrowserRouter } from "react-router-dom";
+ import App from "./App";
 
- hydrateRoot(document, <App />);
+ const root = document.getElementById("app");
+
+ if(!root){
+     console.warn(`Could not find app insertion element #app`)
+ }else{
+
+    hydrateRoot(root,
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      );
+
+ }

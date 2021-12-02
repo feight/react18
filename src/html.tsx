@@ -10,12 +10,14 @@ export const Html: React.ComponentType = ({ children }) => (
         <title>{"Hello World"}</title>
       </head>
       <body>
-        <noscript
-          dangerouslySetInnerHTML={{
-            __html: `<b>Enable JavaScript to run this app.</b>`
-          }}
-        />
-        {children}
+            <noscript
+            dangerouslySetInnerHTML={{
+                __html: `<b>Enable JavaScript to run this app.</b>`
+            }}
+            />
+            <div id="app">
+                {children}
+            </div>
       </body>
     </html>
 )

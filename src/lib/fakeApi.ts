@@ -36,7 +36,7 @@ export function fetchData() {
 
   async function fetchUser() {
     const res = await fetch(`https://www.businesslive.co.za/apiv1/pub/articles/get-all`);
-    console.log("CHECKING HERE");
+    console.log("Fetching Data");
     return res.json()
   }
 

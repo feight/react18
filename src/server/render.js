@@ -1,7 +1,9 @@
 
 import React from "react";
 import { renderToPipeableStream } from 'react-dom/server';
+import { StaticRouter } from "react-router-dom/server";
 import App from "../App";
+import { Html } from "../html";
 
 export const render = (url, res) => {
     res.socket.on("error", (error) => {
@@ -9,7 +11,11 @@ export const render = (url, res) => {
     });
     let didError = false;
     const { pipe, abort } = renderToPipeableStream(
-        <App />,
+        <Html>
+            <StaticRouter location={ url }>
+                <App />
+            </StaticRouter>
+        </Html>,
       {
         bootstrapScripts: ["/static/index.js"],
         onCompleteShell() {
